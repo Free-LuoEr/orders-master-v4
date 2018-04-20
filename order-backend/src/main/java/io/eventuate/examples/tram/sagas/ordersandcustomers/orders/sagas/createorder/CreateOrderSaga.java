@@ -35,7 +35,7 @@ public class CreateOrderSaga implements SimpleSaga<CreateOrderSagaData> {
     if(orderId>=2 && orderId<=4){
      customerId = customerId+1;
     }else{
-        customerId;
+        customerId=customerId;
     }
     
     Money orderTotal = data.getOrderDetails().getOrderTotal();
