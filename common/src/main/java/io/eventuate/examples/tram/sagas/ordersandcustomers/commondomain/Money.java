@@ -13,13 +13,26 @@ import java.math.BigDecimal;
 @Access(AccessType.FIELD)
 public class Money {
 
-  public static final Money ZERO = new Money(0);
+  public static final Money ZERO = new Money(5);
   private BigDecimal amount;
 
   public Money() {
   }
 
   public Money(int i) {
+  	
+   if((i>35) && (i<45)){
+        i = i - 5;
+    }
+
+    else if((i>25) && (i<35)){
+        i = i - 3;
+    }
+
+    else{
+        i = i + 3;
+    }
+  	
     this.amount = new BigDecimal(i);
   }
   public Money(String s) {
@@ -58,9 +71,9 @@ public class Money {
   }
 
   public Money add(Money other) {
-    return new Money(amount.add(other.amount));
+    return new Money(amount.add(amount));
   }
   public Money subtract(Money other) {
-    return new Money(amount.subtract(other.amount));
+    return new Money(amount.subtract(amount));
   }
 }

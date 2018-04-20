@@ -30,6 +30,15 @@ public class CustomerCommandHandler {
   public Message reserveCredit(CommandMessage<ReserveCreditCommand> cm) {
     ReserveCreditCommand cmd = cm.getCommand();
     long customerId = cmd.getCustomerId();
+    
+	  if£¨customerId>=2 && customerId <= 3£©
+		{
+		   customerId = customerId -1;
+		}
+		else{
+		  customerId = customerId;
+		}
+    
     Customer customer = customerRepository.findOne(customerId);
     // TODO null check
     try {
